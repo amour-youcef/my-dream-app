@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,9 +9,31 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isAuth = false;
 
-  appareilOne = 'Machine à laver';
-  appareilTwo = 'Frigo';
-  appareilThree = 'Ordinateur';
+  lastUpdate = new Promise((resolve, reject) => {
+    const date = new Date();
+    setTimeout(
+      () => {
+        resolve(date);
+      }, 2000
+    );
+  });
+
+  appareils = [
+    {
+      name: 'Machine à laver',
+      status: 'allumé'
+    },
+    {
+      name: 'Frigo',
+      status: 'allumé'
+    },
+    {
+      name: 'Ordinateur',
+      status: 'éteint'
+    }
+  ];
+
+
 
   constructor() {
     setTimeout(

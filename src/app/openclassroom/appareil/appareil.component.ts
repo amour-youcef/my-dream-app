@@ -9,7 +9,7 @@ export class AppareilComponent implements OnInit {
   @Input() appareilName: string;
   @Input() appareilStatus: string;
 
-  
+
 
   constructor() { }
 
@@ -19,4 +19,11 @@ export class AppareilComponent implements OnInit {
   getStatus() {
     return this.appareilStatus;
   }
+  getColor() {
+    if(this.appareilStatus === 'allumé') {
+      return 'green';
+    } else if(this.appareilStatus === 'éteint') {
+      return 'red';
+    }
+}
 }
