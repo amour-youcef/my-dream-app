@@ -14,6 +14,7 @@ import {AuthService} from './services/auth.service';
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { TestComponent } from './test/test.component';
 
 const appRoutes: Routes = [
   { path: 'appareils', canActivate: [AuthGuard], component: AppareilViewComponent },
@@ -25,7 +26,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, MonPreCompComponent, PostCreateComponent, AppareilComponent, AuthComponent, AppareilViewComponent, SingleAppareilComponent, FourOhFourComponent],
+  declarations: [AppComponent, MonPreCompComponent, PostCreateComponent, AppareilComponent, AuthComponent, AppareilViewComponent, SingleAppareilComponent, FourOhFourComponent, TestComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [AppareilService],
   bootstrap: [AppComponent]
